@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>View Slots</title>
+  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style1.css') }}">
+
+</head>
+<body>
+  <h2>All Parking Slots</h2>
+  <table border="1">
+    <tr>
+      <th>Slot</th>
+      <th>Floor</th>
+      <th>Type</th>
+      <th>Status</th>
+      <th>Amount</th>
+      <th>Payment</th>
+      <th>Action</th>
+    </tr>
+    {% for slot in slots %}
+    <tr>
+      <td>{{ slot.slot_number }}</td>
+      <td>{{ slot.floor }}</td>
+      <td>{{ slot.vehicle_type }}</td>
+      <td>{{ 'Occupied' if slot.occupied else 'Available' }}</td>
+      <td>₹{{ slot.amount }}</td>
+      <td>{{ slot.payment_status }}</td>
+      <td><a href="/toggle-occupy/{{ slot._id }}">Toggle</a></td>
+    </tr>
+    {% endfor %}
+  </table>
+</body>
+</html>

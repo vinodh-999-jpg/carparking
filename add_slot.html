@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Add Slot</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <h2>Add New Parking Slot</h2>
+  
+  <form method="POST" class="form-container">
+    <label>Slot Number:</label>
+    <input name="slot_number" required><br>
+
+    <label>Floor:</label>
+    <input name="floor" required><br>
+
+    <label>Vehicle Type:</label>
+    <select name="vehicle_type">
+      <option value="2-wheeler">2-wheeler</option>
+      <option value="4-wheeler">4-wheeler</option>
+    </select><br>
+
+    <label>Amount:</label>
+    <input name="amount" type="number" required><br>
+
+    <label>Payment Status:</label>
+    <select name="payment_status">
+      <option value="Unpaid">Unpaid</option>
+      <option value="Paid">Paid</option>
+    </select><br>
+
+    <button type="submit">Add Slot</button>
+  </form>
+
+  <p><a href="/">← Back to Home</a></p>
+</body>
+</html>
